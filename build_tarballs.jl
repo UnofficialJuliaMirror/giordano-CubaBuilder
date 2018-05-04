@@ -1,20 +1,21 @@
 using BinaryBuilder
 
+commit_sha = "1c3e17736216bb01f6a6d32746b851869a25c867"
+
 # Collection of sources required to build CubaBuilder
 sources = [
-    "https://github.com/giordano/cuba/archive/1c3e17736216bb01f6a6d32746b851869a25c867.tar.gz" =>
+    "https://github.com/giordano/cuba/archive/$commit_sha.tar.gz" =>
     "e572dcb49c52bcdff5c20a95caff2fe0aae504c56200d798a00a960eb27f8a73",
 
 ]
 
 # Bash recipe for building across all platforms
-script = raw"""
-cd $WORKSPACE/srcdir
-cd cuba-1c3e17736216bb01f6a6d32746b851869a25c867/
-./configure --prefix=$prefix --host=$target
+script = """
+cd \$WORKSPACE/srcdir
+cd cuba-$commit_sha/
+./configure --prefix=\$prefix --host=\$target
 make shared
 make install
-
 """
 
 # These are the platforms we will build for by default, unless further
@@ -36,10 +37,7 @@ products(prefix) = [
 ]
 
 # Dependencies that must be installed before this package can be built
-dependencies = [
-    
-]
+dependencies = []
 
 # Build the tarballs, and possibly a `build.jl` as well.
 build_tarballs(ARGS, "Cuba", sources, script, platforms, products, dependencies)
-
