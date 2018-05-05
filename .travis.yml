@@ -25,3 +25,15 @@ before_script:
 script:
   - julia build_tarballs.jl
 
+deploy:
+    provider: releases
+    api_key:
+        # Note; this api_key is only valid for giordano/CubaBuilder; you need
+        # to make your own: https://docs.travis-ci.com/user/deployment/releases/
+        secure: fgkTWbLQEIJDy2ysc4uncMvSVvcNWXSdPTt7e3ybssl16axMFL+yQLDWXxBfGUnhjzp/dhspD8hTVIbJMZ9VjsG9RFXAagfOAxkJ37Xvn+ATRM8fdkmvQhH5NH+oqlMP4Yt9SDzktpWIK2ZRLLM3XxDJWpB+jFvXtl0Elm354QQpn/gffsUi2V0QJvSdmQmQY5QBiZiICPS4bS5vQ7xI6CyOaY4/+xv1Xuw1e+m97cTegyZZcUUEIAHfj7qznjykA9l3MwBoOo9be+EAGv4UBiK+u3XeHkpY1luv0Srr5K8x+tYs5SSHL8aR0qC2FP/mYtFgPE61Q1SFKNSVKVMkTuECmytV+2mgJc3QXDztTkSeDXImIDzbVK7B4Muh5ObplSyVtARsEnMGVsikPYu0t7m2qbBNET243SNTDzSrhvcpyLGp4O+0tD4gu/3twSwCwSPKCcEZr892JPrKfi1M0Wk03QwTPvFL9q6TAfeSVu88bC8+f4ZBDc2bJ6rr10jXcWeH6NXnWglZo4UIJ5zQj3BHLiJICCt7vkygk7uewnWuxMo9yaS1FtSjAxx3gtg8ASMUf0wojRcq3+K7QrVS4Tv+4t+73For42Yc9s8C91/Ek/BR8Fk0/zGnkq/AqBFdSBFpbK37PeRBiJHCZELXv90ptZ3NGBTt+HdOkV0kmq4=
+    file_glob: true
+    file: products/*
+    skip_cleanup: true
+    on:
+        repo: giordano/CubaBuilder
+        tags: true
