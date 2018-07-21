@@ -4,14 +4,14 @@ using BinaryBuilder
 
 name = "Cuba"
 version = v"4.2a"
-commit_sha = "75a98808e0246a8b716df6478169711144f66e0c"
+commit_sha = "11bfbf509088f168622b8268f49c0a59ee81758b"
 
 # Collection of sources required to build Cuba
 name = "Cuba"
 version = v"4.2"
 sources = [
     "https://github.com/giordano/cuba/archive/$commit_sha.tar.gz" =>
-    "d5984ba8678acf4afba78a37c6e01a0fedc6d3ab6052eef196d1c9a5382dc869",
+    "9cbb3a9c6ea541d7f3b0efcba6a865082e70536aded6a347bcec4873df3f3cc4",
 
 ]
 
