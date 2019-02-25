@@ -2,13 +2,11 @@
 # `julia build_tarballs.jl --help` to see a usage message.
 using BinaryBuilder
 
-name = "Cuba"
-version = v"4.2a"
 commit_sha = "11bfbf509088f168622b8268f49c0a59ee81758b"
 
 # Collection of sources required to build Cuba
 name = "Cuba"
-version = v"4.2"
+version = v"4.2a"
 sources = [
     "https://github.com/giordano/cuba/archive/$commit_sha.tar.gz" =>
     "9cbb3a9c6ea541d7f3b0efcba6a865082e70536aded6a347bcec4873df3f3cc4",
